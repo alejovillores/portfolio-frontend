@@ -1,10 +1,15 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Home}  from './pages/Home.js';
 
 export default function App() {
   return (
-    <div>
-      <Button variant="contained">Hello World</Button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
